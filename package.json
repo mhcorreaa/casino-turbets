@@ -1,0 +1,25 @@
+{
+  "name": "turbets",
+  "version": "1.0.0",
+  "description": "Proyecto académico que consiste en crear una página web para un casino ficticio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhcorreaa/casino-turbets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mhcorreaa/casino-turbets/issues"
+  },
+  "homepage": "https://github.com/mhcorreaa/casino-turbets#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.4"
+  }
+}
