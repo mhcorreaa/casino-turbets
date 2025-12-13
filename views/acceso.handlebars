@@ -1,0 +1,28 @@
+{{> header}}
+
+<div class="container container-login">
+
+      <form action="/perfil" method="post">
+      <input
+        class="campo-texto"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Ingrese su correo electrónico"
+        required
+      />
+      <input
+        class="campo-texto"
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Contraseña"
+        required
+      />
+      <button class="button iniciar-sesion-landing-button" type="submit">
+        Iniciar Sesión
+      </button>
+      <button type="button" class="olvidar-password-button">¿Olvidaste tu contraseña?</button>
+      <div class="separator"></div>
+      </form>
+    </div>

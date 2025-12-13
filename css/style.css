@@ -333,13 +333,9 @@ body.info_app {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
- 
   color:rgb(218, 165, 32);
-
   min-height: 100vh; 
-   
   margin: 0;
-
   background-color: #212121;
 
 }
@@ -349,7 +345,7 @@ body.info_app {
   font-size: 400%;
   padding-left: 0;
   text-align: center;
-  margin: 200px 20% 40px 20% ;
+  margin: 100px 20% 40px 20%;
 }
 
 .developer_name{
@@ -371,12 +367,12 @@ body.info_app {
   gap: 20%; 
   max-width: 90%; /* para que quepa en cualquier pantalla */
   margin: 20px 10% 0 10%;
-  padding: 0 20px;
 }
 
 .disclaimer{
   font-size: 12px;
   margin-top: 50px;
+  margin-bottom: 0px;
 }
 
 /* Ruleta */
