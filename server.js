@@ -21,6 +21,9 @@ app.set("views", path.join(__dirname, "views"));
 // Archivos estáticos (css, imágenes, etc.)
 app.use(express.static(__dirname));
 
+//leer metodos post
+app.use(express.urlencoded({ extended: true }));
+
 // Ruta principal
 app.get("/", (req, res) => {
   res.render("index", { 
@@ -41,6 +44,13 @@ app.get("/registro", (req, res) => {
     })
 })
 
+app.post("/registro", (req, res) => {
+
+  const {fullname, username, email, password, passwordConfirm, fechaNacimiento} = req.body;
+
+  res.redirect("/perfil");
+})
+
 app.get("/acceso", (req, res) => {
 
     res.render("acceso", {
@@ -50,6 +60,13 @@ app.get("/acceso", (req, res) => {
         showProfileButton: false
     })
 })
+
+app.post("/acceso", (req, res) => {
+
+  const {email, password} = req.body;
+
+  res.redirect("/perfil");
+});
 
 app.get("/perfil", (req, res) => {
 
