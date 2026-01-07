@@ -73,6 +73,50 @@ app.get("/info-app", (req, res) => {
 
 })
 
+app.get("/transacciones", (req, res) => {
+
+  res.render("transacciones", {
+
+    title: "Transacciones - Turbets",
+    showLoginButton: false,
+    showProfileButton: true,
+    showRegisterButton: false
+  })
+})
+
+app.get("/historial", (req, res) => {
+
+  res.render("historial", {
+
+    title: "Historial - Turbets",
+    showLoginButton: false,
+    showProfileButton: true,
+    showRegisterButton: false
+  })
+})
+
+app.get("/ruleta", (req, res) => {
+
+  res.render("ruleta", {
+
+    title: "Ruleta - Turbets",
+    showLoginButton: false,
+    showProfileButton: true,
+    showRegisterButton: false
+  })
+})
+
+app.get("/juegos", (req, res) => {
+
+  res.render("juegos", {
+
+    title: "Juegos - Turbets",
+    showLoginButton: false,
+    showProfileButton: true,
+    showRegisterButton: false
+  })
+})
+
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
