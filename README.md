@@ -1,1 +1,1 @@
-Proyecto académico que consiste en crear una página web para un casino ficticio.
+Pagina web para un casino virtual (Proyecto academico)
