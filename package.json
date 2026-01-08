@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/mhcorreaa/casino-turbets#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "express-handlebars": "^8.0.4"
+    "express-handlebars": "^8.0.4",
+    "mongoose": "^9.1.2"
   }
 }

@@ -1,9 +1,13 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
+const mongoose = require("mongoose");
+const User = require("./models/User");
 
 const app = express();
 const PORT = 3000;
+
+require("dotenv").config();
 
 // Configurar Handlebars
 app.engine(
@@ -44,12 +48,31 @@ app.get("/registro", (req, res) => {
     })
 })
 
-app.post("/registro", (req, res) => {
+app.post("/registro", async (req, res) => {
 
   const {fullname, username, email, password, passwordConfirm, fechaNacimiento} = req.body;
 
-  res.redirect("/perfil");
-})
+  if(password != passwordConfirm){
+
+    return res.send("Las contraseñas no coinciden");
+  }
+
+  try{
+
+    await User.create({
+
+      fullname, username, email, password, fechaNacimiento: new Date(fechaNacimiento)
+    });
+
+    res.redirect("/perfil");
+  }
+  catch (err){
+
+    console.error("Error creando usuario:", err.message);
+    res.status(500).send("Error registranbdo usuario");
+  }
+  
+});
 
 app.get("/acceso", (req, res) => {
 
@@ -133,6 +156,19 @@ app.get("/juegos", (req, res) => {
     showRegisterButton: false
   })
 })
+
+const MONGODB_URI = process.env.MONGODB_URI;
+
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+
+    console.log("Conectado a MongoDB Atlas");
+  })
+  .catch((err) => {
+
+    console.error("Error conectando a MongoDB: ", err.message);
+  });
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
